@@ -1,5 +1,5 @@
 include(gtest_dependency.pri)
-INCLUDEPATH += $$PWD/..
+INCLUDEPATH += $$PWD/../MoneyCalculator
 
 TEMPLATE = app
 CONFIG += console c++11
@@ -9,9 +9,9 @@ CONFIG -= qt
 
 HEADERS += \
         tst_nothing.h \
-        ../calculatorstub.h
+        ../MoneyCalculator/moneycalculator.h
 
 SOURCES += \
         main.cpp \
-        ../calculatorstub.cpp
+        ../MoneyCalculator/moneycalculator.cpp
 

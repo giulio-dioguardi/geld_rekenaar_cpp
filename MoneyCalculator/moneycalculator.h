@@ -2,10 +2,10 @@
 #define CALCULATORSTUB_H
 
 
-class CalculatorStub
+class MoneyCalculator
 {
 public:
-    CalculatorStub();
+    MoneyCalculator();
     int value();
 };
 

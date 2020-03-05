@@ -3,13 +3,13 @@
 
 #include <gtest/gtest.h>
 #include <gmock/gmock-matchers.h>
-#include <calculatorstub.h>
+#include <moneycalculator.h>
 
 using namespace testing;
 
 TEST(TestGeldRekenaar, getValueZero)
 {
-    CalculatorStub* s = new CalculatorStub();
+    MoneyCalculator* s = new MoneyCalculator();
     ASSERT_EQ(0, s->value());
 }
 

@@ -1,4 +1,5 @@
 include(gtest_dependency.pri)
+INCLUDEPATH += $$PWD/..
 
 TEMPLATE = app
 CONFIG += console c++11
@@ -7,7 +8,10 @@ CONFIG += thread
 CONFIG -= qt
 
 HEADERS += \
-        tst_nothing.h
+        tst_nothing.h \
+        ../calculatorstub.h
 
 SOURCES += \
-        main.cpp
+        main.cpp \
+        ../calculatorstub.cpp
+

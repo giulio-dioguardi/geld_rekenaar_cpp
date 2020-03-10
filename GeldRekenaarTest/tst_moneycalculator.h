@@ -1,5 +1,5 @@
-#ifndef TST_NOTHING_H
-#define TST_NOTHING_H
+#ifndef TST_MONEYCALCULATOR_H
+#define TST_MONEYCALCULATOR_H
 
 #include <gtest/gtest.h>
 #include <gmock/gmock-matchers.h>
@@ -7,10 +7,9 @@
 
 using namespace testing;
 
-TEST(TestGeldRekenaar, getValueZero)
+TEST(TestMoneyCalculator, getValueZero)
 {
     MoneyCalculator* s = new MoneyCalculator();
     ASSERT_EQ(0, s->value());
 }
-
-#endif // TST_NOTHING_H
+#endif // TST_MONEYCALCULATOR_H

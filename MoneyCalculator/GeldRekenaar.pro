@@ -16,7 +16,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        moneycalculator.cpp
+        moneycalculator.cpp \
+        moneyvalue.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -27,4 +28,5 @@ RESOURCES += \
     qml.qrc
 
 HEADERS += \
-    moneycalculator.h
+    moneycalculator.h \
+    moneyvalue.h

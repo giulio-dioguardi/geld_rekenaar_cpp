@@ -8,10 +8,13 @@ CONFIG += thread
 CONFIG -= qt
 
 HEADERS += \
-        tst_nothing.h \
-        ../MoneyCalculator/moneycalculator.h
+        tst_moneycalculator.h \
+        tst_moneyvalue.h \
+        ../MoneyCalculator/moneycalculator.h \
+        ../MoneyCalculator/moneyvalue.h
 
 SOURCES += \
         main.cpp \
-        ../MoneyCalculator/moneycalculator.cpp
+        ../MoneyCalculator/moneycalculator.cpp \
+        ../MoneyCalculator/moneyvalue.cpp
 

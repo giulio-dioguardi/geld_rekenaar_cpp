@@ -1,4 +1,5 @@
-#include "tst_nothing.h"
+#include "tst_moneycalculator.h"
+#include "tst_moneyvalue.h"
 
 #include <gtest/gtest.h>
 

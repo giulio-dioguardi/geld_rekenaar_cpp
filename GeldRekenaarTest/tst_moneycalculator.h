@@ -12,4 +12,20 @@ TEST(TestMoneyCalculator, getValueZero)
     MoneyCalculator* s = new MoneyCalculator();
     ASSERT_EQ(0, s->value());
 }
+
+TEST(TestMoneyCalculator, getSomeValue)
+{
+    MoneyCalculator calculator;
+    calculator.addMoneyValue(MoneyValue(3, 50));
+    ASSERT_EQ(150, calculator.centValue());
+}
+
+TEST(TestMoneyCalculator, getMultipleValues)
+{
+    MoneyCalculator calculator;
+    calculator.addMoneyValue(MoneyValue(3, 50));
+    calculator.addMoneyValue(MoneyValue(3, 100));
+    calculator.addMoneyValue(MoneyValue(3, 200));
+    ASSERT_EQ(1050, calculator.centValue());
+}
 #endif // TST_MONEYCALCULATOR_H

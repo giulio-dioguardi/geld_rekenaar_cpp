@@ -4,8 +4,13 @@
 
 class MoneyValue
 {
+private:
+    int m_amount;
+    int m_centValue;
 public:
-    MoneyValue();
+    MoneyValue(int amount, int centValue);
+    double value();
+    int centValue();
 };
 
 #endif // MONEYVALUE_H

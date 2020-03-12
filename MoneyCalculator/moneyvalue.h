@@ -9,8 +9,9 @@ private:
     int m_centValue;
 public:
     MoneyValue(int amount, int centValue);
-    double value();
-    int centValue();
+    double value() const;
+    int centValue() const;
+    int amount() const;
 };
 
 #endif // MONEYVALUE_H

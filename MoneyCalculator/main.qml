@@ -8,13 +8,15 @@ Window {
     height: 480
 
     Rectangle {
-        width: 200
-        height: 100
-        color: "red"
+        width: parent.width
+        height: parent.height
 
-        Text {
-            anchors.centerIn: parent
-            text: "Hello, World!"
+        ListView {
+            anchors.fill: parent
+            model: myModel
+            delegate: Text { text: "Denominator: " + centValue + ", Amount: " + amount }
+            highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
+            focus: true
         }
     }
 }

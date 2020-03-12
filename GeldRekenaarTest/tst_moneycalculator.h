@@ -9,8 +9,8 @@ using namespace testing;
 
 TEST(TestMoneyCalculator, getValueZero)
 {
-    MoneyCalculator* s = new MoneyCalculator();
-    ASSERT_EQ(0, s->value());
+    MoneyCalculator calculator;
+    ASSERT_EQ(0, calculator.value());
 }
 
 TEST(TestMoneyCalculator, getSomeValue)
@@ -20,12 +20,21 @@ TEST(TestMoneyCalculator, getSomeValue)
     ASSERT_EQ(150, calculator.centValue());
 }
 
-TEST(TestMoneyCalculator, getMultipleValues)
+TEST(TestMoneyCalculator, getMultiplecentValues)
 {
     MoneyCalculator calculator;
     calculator.addMoneyValue(MoneyValue(3, 50));
     calculator.addMoneyValue(MoneyValue(3, 100));
     calculator.addMoneyValue(MoneyValue(3, 200));
     ASSERT_EQ(1050, calculator.centValue());
+}
+
+TEST(TestMoneyCalculator, getMultipleValues)
+{
+    MoneyCalculator calculator;
+    calculator.addMoneyValue(MoneyValue(3, 50));
+    calculator.addMoneyValue(MoneyValue(3, 100));
+    calculator.addMoneyValue(MoneyValue(3, 200));
+    ASSERT_EQ(10.50, calculator.value());
 }
 #endif // TST_MONEYCALCULATOR_H

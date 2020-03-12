@@ -17,7 +17,7 @@ int MoneyCalculator::centValue()
 
 double MoneyCalculator::value()
 {
-    return 0.0;
+    return centValue() / 100.0;
 }
 
 void MoneyCalculator::addMoneyValue(MoneyValue value)

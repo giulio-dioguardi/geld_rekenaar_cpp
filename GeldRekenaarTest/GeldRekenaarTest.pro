@@ -10,10 +10,12 @@ HEADERS += \
         tst_moneycalculator.h \
         tst_moneyvalue.h \
         ../MoneyCalculator/moneycalculator.h \
+        ../MoneyCalculator/moneycalculatormodel.h \
         ../MoneyCalculator/moneyvalue.h
 
 SOURCES += \
         main.cpp \
         ../MoneyCalculator/moneycalculator.cpp \
+        ../MoneyCalculator/moneycalculatormodel.cpp \
         ../MoneyCalculator/moneyvalue.cpp
 

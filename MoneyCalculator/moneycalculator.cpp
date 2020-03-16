@@ -1,7 +1,23 @@
 #include "moneycalculator.h"
 
 MoneyCalculator::MoneyCalculator(QObject *parent)
-{}
+{
+    addMoneyValue(MoneyValue(0,1));
+    addMoneyValue(MoneyValue(0,2));
+    addMoneyValue(MoneyValue(0,5));
+    addMoneyValue(MoneyValue(0,10));
+    addMoneyValue(MoneyValue(0,20));
+    addMoneyValue(MoneyValue(0,50));
+    addMoneyValue(MoneyValue(0,100));
+    addMoneyValue(MoneyValue(0,200));
+    addMoneyValue(MoneyValue(0,500));
+    addMoneyValue(MoneyValue(0,1000));
+    addMoneyValue(MoneyValue(0,2000));
+    addMoneyValue(MoneyValue(0,5000));
+    addMoneyValue(MoneyValue(0,10000));
+    addMoneyValue(MoneyValue(0,20000));
+    addMoneyValue(MoneyValue(0,50000));
+}
 
 int MoneyCalculator::centValue()
 {
@@ -13,38 +29,29 @@ int MoneyCalculator::centValue()
     return result;
 }
 
-QHash<int, QByteArray> MoneyCalculator::roleNames() const
+QVector<MoneyValue> MoneyCalculator::items() const
 {
-    QHash<int, QByteArray> roles;
-    roles[CentValueRole] = "centValue";
-    roles[AmountRole] = "amount";
-    return roles;
+    return m_moneyValues;
 }
 
-int MoneyCalculator::rowCount(const QModelIndex &parent) const
+bool MoneyCalculator::setItemAt(int index, const MoneyValue &item)
 {
-    Q_UNUSED(parent)
-    return 3;
-}
-
-QVariant MoneyCalculator::data(const QModelIndex &index, int role) const
-{
-    size_t row = static_cast<size_t>(index.row());
-    if (index.row() < 0 || row >= m_moneyValues.size())
+    if (index < 0 || index >=m_moneyValues.size())
     {
-        return QVariant();
-    }
-    const MoneyValue &moneyValue = m_moneyValues[row];
-    switch (role) {
-    case CentValueRole:
-        return moneyValue.centValue();
-    case AmountRole:
-        return moneyValue.amount();
-    default:
-        return QVariant();
+        return false;
     }
 
+    const MoneyValue &oldItem = m_moneyValues.at(index);
+    if (item.centValue() == oldItem.centValue() && item.amount() && oldItem.amount())
+    {
+        return false;
+    }
+
+    m_moneyValues[index] = item;
+    return true;
 }
+
+
 
 double MoneyCalculator::value()
 {
@@ -53,5 +60,7 @@ double MoneyCalculator::value()
 
 void MoneyCalculator::addMoneyValue(const MoneyValue value)
 {
+    emit preItemAppended();
     this->m_moneyValues.push_back(value);
+    emit postItemAppended();
 }

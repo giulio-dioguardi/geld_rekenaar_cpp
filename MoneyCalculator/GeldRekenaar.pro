@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         moneycalculator.cpp \
+        moneycalculatormodel.cpp \
         moneyvalue.cpp
 
 # Default rules for deployment.
@@ -29,4 +30,5 @@ RESOURCES += \
 
 HEADERS += \
     moneycalculator.h \
+    moneycalculatormodel.h \
     moneyvalue.h

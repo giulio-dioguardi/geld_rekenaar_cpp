@@ -5,7 +5,12 @@ int MoneyValue::amount() const
     return m_amount;
 }
 
-MoneyValue::MoneyValue(int amount, int centValue) :
+void MoneyValue::setAmount(int amount)
+{
+    m_amount = amount;
+}
+
+MoneyValue::MoneyValue(const int amount, const int centValue) :
     m_amount(amount),
     m_centValue(centValue)
 {}

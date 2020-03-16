@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication a(argc, argv);
 
-    qmlRegisterType<MoneyCalculatorModel>("Calculator", 1, 0 , "MoneyCalculatorModel");
+    qmlRegisterType<MoneyCalculatorModel>("Calculator", 1, 0 , "MoneyCalculatorList");
     qmlRegisterUncreatableType<MoneyCalculator>("Calculator", 1, 0, "MoneyCalculator",
                                                 "Shouldn't be created");
 

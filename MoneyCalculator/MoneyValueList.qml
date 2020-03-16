@@ -10,8 +10,8 @@ Frame {
         implicitHeight: 250
         clip: true
 
-        model: MoneyCalculatorModel {
-            list: MoneyCalculator
+        model: MoneyCalculatorList {
+            list: moneyCalculatorModel
         }
 
         delegate: RowLayout {

@@ -16,7 +16,7 @@ public:
         ValueRole,
         AmountRole
     };
-    MoneyCalculatorModel(QObject *parent);
+    MoneyCalculatorModel(QObject *parent = nullptr);
     virtual QHash <int, QByteArray> roleNames() const override;
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;

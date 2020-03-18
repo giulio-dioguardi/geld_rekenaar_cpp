@@ -5,9 +5,9 @@ import QtQuick.Layouts 1.12
 ApplicationWindow {
     id: appWindow
     visible: true
-    title: qsTr("Hello World")
-    width: 640
-    height: 480
+    title: qsTr("Money Calculator")
+    width: 400
+    height: 700
 
     MoneyValueList {
         anchors.centerIn: parent

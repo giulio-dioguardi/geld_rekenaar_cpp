@@ -5,9 +5,12 @@ import QtQuick.Layouts 1.12
 import Calculator 1.0
 
 Frame {
+    height: parent.height
+    width: parent.width
     ListView {
-        implicitWidth: 250
-        implicitHeight: 250
+        height: parent.height
+        width: parent.width
+
         clip: true
 
         model: MoneyCalculatorList {
@@ -16,7 +19,7 @@ Frame {
 
         delegate: RowLayout {
             width: parent.width
-            Label { text: "€ " + model.value }
+            Label { text: "€ " + model.value + "\t" }
             Label { text: "Amount: " }
             TextField {
                 Layout.fillWidth: true

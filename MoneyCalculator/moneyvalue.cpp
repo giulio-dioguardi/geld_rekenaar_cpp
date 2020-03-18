@@ -10,6 +10,21 @@ void MoneyValue::setAmount(int amount)
     m_amount = amount;
 }
 
+int MoneyValue::centValue() const
+{
+    return m_centValue;
+}
+
+void MoneyValue::setCentValue(int centValue)
+{
+    m_centValue = centValue;
+}
+
+double MoneyValue::value() const
+{
+    return this->centValue() / 100.0;
+}
+
 MoneyValue::MoneyValue(const int amount, const int centValue) :
     m_amount(amount),
     m_centValue(centValue)
@@ -18,16 +33,16 @@ MoneyValue::MoneyValue(const int amount, const int centValue) :
 /**
  * Return the total value as a double
  */
-double MoneyValue::value() const
+double MoneyValue::calculateTotalValue() const
 {
-    return this->centValue() / 100.0;
+    return this->calculateTotalCentValue() / 100.0;
 }
 
 
 /**
  * Return the total value as an integer in cents
  */
-int MoneyValue::centValue() const
+int MoneyValue::calculateTotalCentValue() const
 {
     return m_amount * m_centValue;
 }

@@ -24,7 +24,7 @@ int MoneyCalculator::centValue()
     int result = 0;
     for (size_t i = 0; i < m_moneyValues.size(); i++)
     {
-        result += m_moneyValues.at(i).centValue();
+        result += m_moneyValues.at(i).calculateTotalCentValue();
     }
     return result;
 }
@@ -42,7 +42,7 @@ bool MoneyCalculator::setItemAt(int index, const MoneyValue &item)
     }
 
     const MoneyValue &oldItem = m_moneyValues.at(index);
-    if (item.centValue() == oldItem.centValue() && item.amount() && oldItem.amount())
+    if (item.amount() && oldItem.amount())
     {
         return false;
     }

@@ -12,6 +12,8 @@ QHash<int, QByteArray> MoneyCalculatorModel::roleNames() const
     QHash<int, QByteArray> roles;
     roles[CentValueRole] = "centValue";
     roles[ValueRole] = "value";
+    roles[CalculateTotalCentValueRole] = "calculateTotalCentValue";
+    roles[CalculateTotalValueRole] = "calculsteTotalValue";
     roles[AmountRole] = "amount";
     return roles;
 }
@@ -35,8 +37,12 @@ QVariant MoneyCalculatorModel::data(const QModelIndex &index, int role) const
     switch (role) {
     case CentValueRole:
         return QVariant(item.centValue());
+    case CalculateTotalCentValueRole:
+        return QVariant(item.calculateTotalCentValue());
     case ValueRole:
         return QVariant(item.value());
+    case CalculateTotalValueRole:
+        return QVariant(item.calculateTotalValue());
     case AmountRole:
         return QVariant(item.amount());
     default:

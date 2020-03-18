@@ -13,7 +13,9 @@ class MoneyCalculatorModel : public QAbstractListModel
 public:
     enum MoneyValueRoles {
         CentValueRole = Qt::UserRole + 1,
+        CalculateTotalValueRole,
         ValueRole,
+        CalculateTotalCentValueRole,
         AmountRole
     };
     MoneyCalculatorModel(QObject *parent = nullptr);

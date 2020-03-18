@@ -2,27 +2,28 @@
 
 MoneyCalculator::MoneyCalculator(QObject *parent)
 {
-    addMoneyValue(MoneyValue(0,1));
-    addMoneyValue(MoneyValue(0,2));
-    addMoneyValue(MoneyValue(0,5));
-    addMoneyValue(MoneyValue(0,10));
-    addMoneyValue(MoneyValue(0,20));
-    addMoneyValue(MoneyValue(0,50));
-    addMoneyValue(MoneyValue(0,100));
-    addMoneyValue(MoneyValue(0,200));
-    addMoneyValue(MoneyValue(0,500));
-    addMoneyValue(MoneyValue(0,1000));
-    addMoneyValue(MoneyValue(0,2000));
-    addMoneyValue(MoneyValue(0,5000));
-    addMoneyValue(MoneyValue(0,10000));
-    addMoneyValue(MoneyValue(0,20000));
+    Q_UNUSED(parent)
     addMoneyValue(MoneyValue(0,50000));
+    addMoneyValue(MoneyValue(0,20000));
+    addMoneyValue(MoneyValue(0,10000));
+    addMoneyValue(MoneyValue(0,5000));
+    addMoneyValue(MoneyValue(0,2000));
+    addMoneyValue(MoneyValue(0,1000));
+    addMoneyValue(MoneyValue(0,500));
+    addMoneyValue(MoneyValue(0,200));
+    addMoneyValue(MoneyValue(0,100));
+    addMoneyValue(MoneyValue(0,50));
+    addMoneyValue(MoneyValue(0,20));
+    addMoneyValue(MoneyValue(0,10));
+    addMoneyValue(MoneyValue(0,5));
+    addMoneyValue(MoneyValue(0,2));
+    addMoneyValue(MoneyValue(0,1));
 }
 
 int MoneyCalculator::centValue()
 {
     int result = 0;
-    for (size_t i = 0; i < m_moneyValues.size(); i++)
+    for (int i = 0; i < m_moneyValues.size(); i++)
     {
         result += m_moneyValues.at(i).calculateTotalCentValue();
     }
